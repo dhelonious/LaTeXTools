@@ -472,7 +472,7 @@ class LatexFillHelper(object):
             cmd_mode = view.settings().get('command_mode', False)
             for sel in view.sel():
                 if(cmd_mode and view.substr(sel.end()+1).strip() in ('', '\x00')
-                   and not view.substr(sel.end()) in '.|,|;|?|!|\'|"|(|)|[|]|{|}'.split('|')):
+                   and not view.substr(sel.end()) in '.|,|;|?|!|\'|"|)|]|}'.split('|')):
                     view.insert(edit, sel.end()+1, value)
                 else:
                     view.insert(edit, sel.end(), value)
